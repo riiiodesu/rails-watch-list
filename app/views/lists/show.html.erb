@@ -1,0 +1,8 @@
+<%= @list.name %>
+<% @bookmarks.each do |bookmark| %>
+  <div><%= bookmark.comment %></div>
+  <div><%= bookmark.movie.title %></div>
+  <div><%= link_to "delete", bookmark_path(bookmark),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
+<% end %>
+
+<%= link_to "Add movie", new_list_bookmark_path(@list) %>
